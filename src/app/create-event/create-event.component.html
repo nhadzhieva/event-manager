@@ -1,0 +1,16 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()" class="add-event-form">
+   <mat-form-field class="full-width">
+    <input matInput placeholder="Name of the event" name="name" [(ngModel)]="editedEvent.name" required>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+      <input matInput placeholder="Location of the event" name="location" [(ngModel)]="editedEvent.location" required >
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Start date and time" name="startDate" [(ngModel)]="editedEvent.startDate" required >
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="End date and time" name="endDate" [(ngModel)]="editedEvent.endDate" required >
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary"
+  [disabled]="form.invalid || form.pristine">Save</button>
+</form>
